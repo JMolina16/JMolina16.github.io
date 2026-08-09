@@ -3,115 +3,229 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jonas Molina | Portafolio de Ingeniería Estructural</title>
+    <title>Jonas Molina | Structural Engineering</title>
     <style>
-        :root {
-            --primary: #1e293b;
-            --accent: #0284c7;
-            --bg: #f8fafc;
-            --card-bg: #ffffff;
-            --text: #334155;
-        }
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            background-color: var(--bg);
-            color: var(--text);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #334155;
+            background-color: #ffffff;
             line-height: 1.6;
+            padding: 2rem 1rem;
         }
-        header {
-            background-color: var(--primary);
-            color: white;
-            padding: 3rem 1rem;
+
+        /* Layout Principal en 2 Columnas */
+        .layout-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2.5rem;
+        }
+
+        /* Columna Izquierda: Perfil */
+        .sidebar {
             text-align: center;
         }
-        header h1 { margin: 0; font-size: 2.2rem; }
-        header p { color: #94a3b8; font-size: 1.1rem; margin-top: 0.5rem; }
-        .container {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+
+        .sidebar h1 {
+            color: #1e3a8a;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
         }
-        section {
-            background: var(--card-bg);
-            padding: 1.5rem 2rem;
+
+        .avatar {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .role-tag {
+            font-size: 0.95rem;
+            color: #475569;
+            margin-bottom: 0.8rem;
+        }
+
+        .social-links {
             margin-bottom: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-        h2 {
-            color: var(--primary);
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 0.3rem;
-            margin-top: 0;
-        }
-        .tags span {
-            display: inline-block;
-            background: #e0f2fe;
-            color: #0369a1;
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-right: 0.4rem;
-            margin-bottom: 0.4rem;
-        }
-        .project-card {
-            border-left: 4px solid var(--accent);
-            padding-left: 1rem;
-            margin-top: 1rem;
-        }
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: #64748b;
             font-size: 0.9rem;
+        }
+
+        .social-links a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+
+        .bio-text {
+            text-align: justify;
+            font-size: 0.9rem;
+            color: #475569;
+            line-height: 1.5;
+        }
+
+        .bio-text p {
+            margin-bottom: 0.8rem;
+        }
+
+        /* Columna Derecha: Contenido */
+        .main-content h2.main-title {
+            color: #1e3a8a;
+            font-size: 2.2rem;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .main-content h3.sub-title {
+            color: #475569;
+            font-size: 1.1rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .tech-icons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .intro-text {
+            font-size: 0.95rem;
+            color: #334155;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        /* Sección de Proyectos */
+        .section-title {
+            color: #1e3a8a;
+            font-size: 1.4rem;
+            margin: 2rem 0 1rem 0;
+        }
+
+        .badge-container {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .project-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-images img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .project-desc {
+            font-size: 0.9rem;
+            color: #475569;
+            margin-bottom: 2rem;
+        }
+
+        /* Responsivo para celulares */
+        @media (max-width: 768px) {
+            .layout-container {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Jonas Molina</h1>
-        <p>Ingeniero Civil | Especialista en Ingeniería Estructural</p>
-    </header>
-
-    <div class="container">
-        <section>
-            <h2>Sobre mí</h2>
-            <p>Ingeniero civil enfocado en el análisis y diseño estructural, modelos de interacción suelo-estructura, diseño sismorresistente y automatización de procesos de cálculo.</p>
-            <div class="tags">
-                <span>Análisis Estructural</span>
-                <span>Diseño Sismorresistente</span>
-                <span>SAP2000</span>
-                <span>Midas Gen</span>
-                <span>LaTeX</span>
+    <div class="layout-container">
+        <!-- COLUMNA IZQUIERDA -->
+        <aside class="sidebar">
+            <h1>Jonas Molina</h1>
+            <!-- Puedes poner la URL de tu foto o dejar una imagen de marcador de posición -->
+            <img src="https://via.placeholder.com/220" alt="Jonas Molina" class="avatar">
+            
+            <div class="role-tag">📐 Structural Engineering</div>
+            
+            <div class="social-links">
+                <a href="#">Structural Tech</a> | 
+                <a href="#">LinkedIn</a>
             </div>
-        </section>
 
-        <section>
-            <h2>Proyectos y Modelado</h2>
-            <div class="project-card">
-                <h3>Análisis Estructural y Desempeño Sísmico</h3>
-                <p>Modelación de edificaciones mediante herramientas de análisis lineal y no lineal, evaluación de derivas de entrepiso y verificación según normativas vigentes.</p>
+            <div class="bio-text">
+                <p>Ingeniero Civil enfocado en el análisis y diseño estructural, modelos de interacción suelo-estructura, diseño sismorresistente y automatización de procesos de ingeniería.</p>
+                <p>Desarrollador de herramientas y scripts aplicados al cálculo de estructuras y optimización de flujos de trabajo técnicos.</p>
             </div>
-            <div class="project-card">
-                <h3>Interacción Suelo-Estructura</h3>
-                <p>Implementación de modelos analíticos (como Pasternak) para el comportamiento dinámico y estático de cimentaciones sobre suelos flexibles.</p>
-            </div>
-        </section>
+        </aside>
 
-        <section>
-            <h2>Contacto</h2>
-            <p>Puedes revisar mis repositorios técnicos o contactarme a través de mi perfil de GitHub.</p>
-            <p><strong>GitHub:</strong> github.com/JMolina16</p>
-        </section>
+        <!-- COLUMNA DERECHA -->
+        <main class="main-content">
+            <h2 class="main-title">PORTAFOLIO</h2>
+            <h3 class="sub-title">PROYECTOS DE INGENIERÍA ESTRUCTURAL</h3>
+
+            <!-- Badges de Tecnologías (usando Shields.io) -->
+            <div class="tech-icons">
+                <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" alt="Python">
+                <img src="https://img.shields.io/badge/LaTeX-008080?style=flat&logo=latex&logoColor=white" alt="LaTeX">
+                <img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white" alt="GitHub">
+                <img src="https://img.shields.io/badge/SAP2000-003366?style=flat" alt="SAP2000">
+                <img src="https://img.shields.io/badge/Midas_Gen-00599C?style=flat" alt="Midas Gen">
+                <img src="https://img.shields.io/badge/Revit-0696D7?style=flat&logo=autodesk&logoColor=white" alt="Revit">
+            </div>
+
+            <div class="intro-text">
+                <p>Una de las ventajas más significativas para los ingenieros estructurales que poseen habilidades en programación es la capacidad de optimizar tanto el tiempo como la precisión en sus diseños.</p>
+                <p>Mediante la integración de técnicas de programación y automatización, es posible acelerar la extracción de datos, reducir la probabilidad de errores manuales y enfocar el esfuerzo en el comportamiento y desempeño estructural del proyecto.</p>
+            </div>
+
+            <!-- PROYECTO 1 -->
+            <h3 class="section-title">Automatización del Análisis Sísmico - E.030</h3>
+            <div class="badge-container">
+                <img src="https://img.shields.io/badge/LinkedIn-Post_LinkedIn-blue?style=flat&logo=linkedin" alt="LinkedIn">
+                <img src="https://img.shields.io/badge/GitHub-Código_Fuente-black?style=flat&logo=github" alt="GitHub">
+            </div>
+            
+            <div class="project-images">
+                <img src="https://via.placeholder.com/400x250/e2e8f0/334155?text=Modelo+ETABS+/+SAP2000" alt="Modelo Estructural">
+                <img src="https://via.placeholder.com/400x250/e2e8f0/334155?text=Graficas+de+Derivas" alt="Análisis de Derivas">
+            </div>
+
+            <p class="project-desc">
+                Extracción automática de datos desde modelos estructurales para la verificación de cortante en la base, derivas de entrepiso según la norma E.030 y generación automatizada de memorias de cálculo.
+            </p>
+
+            <!-- PROYECTO 2 -->
+            <h3 class="section-title">Interacción Suelo-Estructura (Modelo Pasternak)</h3>
+            <div class="badge-container">
+                <img src="https://img.shields.io/badge/Google_Drive-Temario_PDF-red?style=flat&logo=google-drive" alt="PDF">
+            </div>
+
+            <div class="project-images">
+                <img src="https://via.placeholder.com/400x250/e2e8f0/334155?text=Modelacion+Cimentacion" alt="Cimentación">
+            </div>
+
+            <p class="project-desc">
+                Implementación de parámetros de rigidez dinámica y modelos de suelo continuos para la evaluación del comportamiento global de la estructura.
+            </p>
+
+        </main>
     </div>
-
-    <footer>
-        <p>© 2026 Jonas Molina — Portafolio alojado en GitHub Pages</p>
-    </footer>
 
 </body>
 </html>
