@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jonas Molina | Structural Engineering</title>
+    <title>Jonas Molina | Ingeniería Estructural & Oficina Técnica</title>
     <style>
         * {
             box-sizing: border-box;
@@ -19,16 +19,15 @@
             padding: 2rem 1rem;
         }
 
-        /* Layout Principal en 2 Columnas */
         .layout-container {
-            max-width: 1100px;
+            max-width: 1150px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 300px 1fr;
+            grid-template-columns: 320px 1fr;
             gap: 2.5rem;
         }
 
-        /* Columna Izquierda: Perfil */
+        /* Sidebar Izquierda */
         .sidebar {
             text-align: center;
         }
@@ -36,22 +35,23 @@
         .sidebar h1 {
             color: #1e3a8a;
             font-size: 1.8rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .degree {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #0284c7;
+            margin-bottom: 0.8rem;
         }
 
         .avatar {
-            width: 220px;
-            height: 220px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 1rem;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        .role-tag {
-            font-size: 0.95rem;
-            color: #475569;
-            margin-bottom: 0.8rem;
         }
 
         .social-links {
@@ -62,6 +62,7 @@
         .social-links a {
             color: #2563eb;
             text-decoration: none;
+            font-weight: 500;
         }
 
         .social-links a:hover {
@@ -75,11 +76,30 @@
             line-height: 1.5;
         }
 
-        .bio-text p {
-            margin-bottom: 0.8rem;
+        .sidebar-section {
+            text-align: left;
+            margin-top: 1.8rem;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 1rem;
         }
 
-        /* Columna Derecha: Contenido */
+        .sidebar-section h4 {
+            color: #1e3a8a;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar-section ul {
+            list-style: none;
+            font-size: 0.88rem;
+            color: #475569;
+        }
+
+        .sidebar-section li {
+            margin-bottom: 0.4rem;
+        }
+
+        /* Columna Derecha */
         .main-content h2.main-title {
             color: #1e3a8a;
             font-size: 2.2rem;
@@ -89,7 +109,7 @@
 
         .main-content h3.sub-title {
             color: #475569;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             text-align: center;
             margin-bottom: 1.5rem;
             font-weight: 600;
@@ -103,48 +123,63 @@
             margin-bottom: 2rem;
         }
 
-        .intro-text {
-            font-size: 0.95rem;
-            color: #334155;
-            margin-bottom: 1.5rem;
-            text-align: justify;
-        }
-
-        /* Sección de Proyectos */
         .section-title {
             color: #1e3a8a;
-            font-size: 1.4rem;
+            font-size: 1.35rem;
             margin: 2rem 0 1rem 0;
+            border-bottom: 2px solid #2563eb;
+            padding-bottom: 0.3rem;
         }
 
         .badge-container {
             display: flex;
             gap: 8px;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             flex-wrap: wrap;
         }
 
-        .project-images {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .project-images img {
-            width: 100%;
-            height: auto;
-            border-radius: 6px;
-            border: 1px solid #e2e8f0;
-        }
-
         .project-desc {
-            font-size: 0.9rem;
+            font-size: 0.92rem;
             color: #475569;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: justify;
         }
 
-        /* Responsivo para celulares */
+        /* Timeline de Experiencia */
+        .exp-item {
+            margin-bottom: 1.3rem;
+            padding-left: 1rem;
+            border-left: 3px solid #0284c7;
+        }
+
+        .exp-title {
+            font-weight: 700;
+            color: #1e293b;
+            font-size: 1rem;
+        }
+
+        .exp-company {
+            color: #2563eb;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .exp-date {
+            font-size: 0.8rem;
+            color: #64748b;
+            margin-bottom: 0.4rem;
+        }
+
+        .exp-bullets {
+            font-size: 0.88rem;
+            color: #475569;
+            padding-left: 1.2rem;
+        }
+
+        .exp-bullets li {
+            margin-bottom: 0.2rem;
+        }
+
         @media (max-width: 768px) {
             .layout-container {
                 grid-template-columns: 1fr;
@@ -158,71 +193,119 @@
         <!-- COLUMNA IZQUIERDA -->
         <aside class="sidebar">
             <h1>Jonas Molina</h1>
-            <!-- Puedes poner la URL de tu foto o dejar una imagen de marcador de posición -->
-            <img src="https://via.placeholder.com/220" alt="Jonas Molina" class="avatar">
+            <div class="degree">Bachiller en Ingeniería Civil</div>
+            <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">Maestrando en Ingeniería Estructural</p>
             
-            <div class="role-tag">📐 Structural Engineering</div>
+            <img src="https://via.placeholder.com/200" alt="Jonas Antonio Molina Valdez" class="avatar">
             
             <div class="social-links">
-                <a href="#">Structural Tech</a> | 
-                <a href="#">LinkedIn</a>
+                <a href="mailto:jamv93@gmail.com">Email</a> | 
+                <a href="https://www.linkedin.com/in/jonas-antonio-molina-valdez-040b80237/" target="_blank">LinkedIn</a> | 
+                <a href="https://github.com/JMolina16" target="_blank">GitHub</a>
             </div>
 
             <div class="bio-text">
-                <p>Ingeniero Civil enfocado en el análisis y diseño estructural, modelos de interacción suelo-estructura, diseño sismorresistente y automatización de procesos de ingeniería.</p>
-                <p>Desarrollador de herramientas y scripts aplicados al cálculo de estructuras y optimización de flujos de trabajo técnicos.</p>
+                <p>Ingeniero Civil con sólida formación en el análisis técnico de estructuras combinada con una trayectoria práctica en la gestión técnico-contractual de obras de infraestructura.</p>
+                <p>Especialista en control económico, metrados, presupuestos, evaluación de expedientes técnicos y administración de contratos (OECE y marcos colaborativos NEC).</p>
+            </div>
+
+            <div class="sidebar-section">
+                <h4>Educación</h4>
+                <ul>
+                    <li><strong>MSc. en Ingeniería Estructural</strong><br>Univ. Privada de Tacna (2026 - Presente)</li>
+                    <li style="margin-top: 0.5rem;"><strong>Bachiller en Ingeniería Civil</strong><br>Univ. Andina del Cusco (2025)</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h4>Capacitaciones</h4>
+                <ul>
+                    <li>• Fundamentos Contratos NEC (2026)</li>
+                    <li>• Ley de Contrataciones / OECE (ICG)</li>
+                    <li>• Costos y Presupuestos S10</li>
+                    <li>• Programación MS Project</li>
+                </ul>
             </div>
         </aside>
 
         <!-- COLUMNA DERECHA -->
         <main class="main-content">
-            <h2 class="main-title">PORTAFOLIO</h2>
-            <h3 class="sub-title">PROYECTOS DE INGENIERÍA ESTRUCTURAL</h3>
+            <h2 class="main-title">PORTAFOLIO PROFESIONAL</h2>
+            <h3 class="sub-title">INGENIERÍA ESTRUCTURAL • OFICINA TÉCNICA • GESTIÓN DE OBRAS</h3>
 
-            <!-- Badges de Tecnologías (usando Shields.io) -->
+            <!-- Badges de Herramientas y Software -->
             <div class="tech-icons">
-                <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" alt="Python">
-                <img src="https://img.shields.io/badge/LaTeX-008080?style=flat&logo=latex&logoColor=white" alt="LaTeX">
-                <img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white" alt="GitHub">
-                <img src="https://img.shields.io/badge/SAP2000-003366?style=flat" alt="SAP2000">
-                <img src="https://img.shields.io/badge/Midas_Gen-00599C?style=flat" alt="Midas Gen">
-                <img src="https://img.shields.io/badge/Revit-0696D7?style=flat&logo=autodesk&logoColor=white" alt="Revit">
+                <img src="https://img.shields.io/badge/S10-Costos_y_Presupuestos-blue?style=flat" alt="S10">
+                <img src="https://img.shields.io/badge/MS_Project-Planificación-green?style=flat" alt="MS Project">
+                <img src="https://img.shields.io/badge/Contratos-NEC_&_OECE-orange?style=flat" alt="Contratos">
+                <img src="https://img.shields.io/badge/SAP2000-Estructuras-003366?style=flat" alt="SAP2000">
+                <img src="https://img.shields.io/badge/Midas_Gen-Estructuras-00599C?style=flat" alt="Midas Gen">
+                <img src="https://img.shields.io/badge/AutoCAD_/_ArcGIS-Catastro-red?style=flat" alt="AutoCAD/ArcGIS">
+                <img src="https://img.shields.io/badge/LaTeX-Informes-008080?style=flat&logo=latex&logoColor=white" alt="LaTeX">
             </div>
 
-            <div class="intro-text">
-                <p>Una de las ventajas más significativas para los ingenieros estructurales que poseen habilidades en programación es la capacidad de optimizar tanto el tiempo como la precisión en sus diseños.</p>
-                <p>Mediante la integración de técnicas de programación y automatización, es posible acelerar la extracción de datos, reducir la probabilidad de errores manuales y enfocar el esfuerzo en el comportamiento y desempeño estructural del proyecto.</p>
-            </div>
-
-            <!-- PROYECTO 1 -->
-            <h3 class="section-title">Automatización del Análisis Sísmico - E.030</h3>
-            <div class="badge-container">
-                <img src="https://img.shields.io/badge/LinkedIn-Post_LinkedIn-blue?style=flat&logo=linkedin" alt="LinkedIn">
-                <img src="https://img.shields.io/badge/GitHub-Código_Fuente-black?style=flat&logo=github" alt="GitHub">
-            </div>
+            <!-- SECCIÓN 1: INGENIERÍA ESTRUCTURAL -->
+            <h3 class="section-title">📐 Ingeniería Estructural & Investigación</h3>
             
-            <div class="project-images">
-                <img src="https://via.placeholder.com/400x250/e2e8f0/334155?text=Modelo+ETABS+/+SAP2000" alt="Modelo Estructural">
-                <img src="https://via.placeholder.com/400x250/e2e8f0/334155?text=Graficas+de+Derivas" alt="Análisis de Derivas">
-            </div>
-
-            <p class="project-desc">
-                Extracción automática de datos desde modelos estructurales para la verificación de cortante en la base, derivas de entrepiso según la norma E.030 y generación automatizada de memorias de cálculo.
-            </p>
-
-            <!-- PROYECTO 2 -->
-            <h3 class="section-title">Interacción Suelo-Estructura (Modelo Pasternak)</h3>
             <div class="badge-container">
-                <img src="https://img.shields.io/badge/Google_Drive-Temario_PDF-red?style=flat&logo=google-drive" alt="PDF">
-            </div>
-
-            <div class="project-images">
-                <img src="https://via.placeholder.com/400x250/e2e8f0/334155?text=Modelacion+Cimentacion" alt="Cimentación">
+                <img src="https://img.shields.io/badge/E.030-Diseño_Sismorresistente-blue?style=flat" alt="E030">
+                <img src="https://img.shields.io/badge/ISE-Interacción_Suelo_Estructura-darkgreen?style=flat" alt="ISE">
             </div>
 
             <p class="project-desc">
-                Implementación de parámetros de rigidez dinámica y modelos de suelo continuos para la evaluación del comportamiento global de la estructura.
+                Desarrollo de modelos analíticos en SAP2000 y Midas Gen enfocado en el desempeño sísmico, rigidez lateral, derivas de entrepiso y modelos de cimentación sobre suelos flexibles (Pasternak), complementado con la automatización de memorias de cálculo e informes técnicos en LaTeX.
             </p>
+
+            <!-- SECCIÓN 2: EXPERIENCIA EN OFICINA TÉCNICA Y OBRAS -->
+            <h3 class="section-title">🏗️ Experiencia Profesional & Oficina Técnica</h3>
+
+            <div class="exp-item">
+                <div class="exp-title">Analista de Oficina Técnica</div>
+                <div class="exp-company">MOLDARSA S.A.C. | Lima</div>
+                <div class="exp-date">Julio 2026 — Presente</div>
+                <ul class="exp-bullets">
+                    <li>Elaboración de metrados, presupuestos, análisis de precios unitarios (APU) y valorizaciones de obra.</li>
+                    <li>Revisión, compatibilización de planos y evaluación de expedientes técnicos.</li>
+                    <li>Preparación de propuestas técnicas y licitaciones para clientes corporativos.</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-title">Supervisor de Mantenimiento e Infraestructura</div>
+                <div class="exp-company">Hoteles Hatun Inti y Restaurant TOTOS House | Machupicchu</div>
+                <div class="exp-date">Abril 2026 — Junio 2026</div>
+                <ul class="exp-bullets">
+                    <li>Supervisión técnica de obras de remodelación y programación de mantenimiento correctivo/preventivo.</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-title">Asistente Técnico de Obra & Compatibilización</div>
+                <div class="exp-company">Consorcio Santo Tomas — I.E. Allhuacchuyo | Chumbivilcas</div>
+                <div class="exp-date">Febrero 2024 — Diciembre 2024</div>
+                <ul class="exp-bullets">
+                    <li>Compatibilización de planos entre especialidades (Estructuras, Arquitectura, II.EE. e II.SS.).</li>
+                    <li>Control de vaciados de concreto, metrados para valorizaciones mensuales y control de stocks.</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-title">Practicante de Catastro y Base Gráfica</div>
+                <div class="exp-company">SUNARP — Oficina Urubamba | Cusco</div>
+                <div class="exp-date">Noviembre 2025 — Diciembre 2025</div>
+                <ul class="exp-bullets">
+                    <li>Evaluación de planos perimétricos y actualización de la Base Gráfica Registral (BGR) en ArcGIS y AutoCAD.</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-title">Asistente de Obra / Estructuras e Infraestructura Vial</div>
+                <div class="exp-company">Molitec Ings SRL | Cusco</div>
+                <div class="exp-date">2019 — 2021</div>
+                <ul class="exp-bullets">
+                    <li>Supervisión en la construcción de estribos de concreto armado, habilitación de acero y excavación (Puente Agua Buena).</li>
+                </ul>
+            </div>
 
         </main>
     </div>
